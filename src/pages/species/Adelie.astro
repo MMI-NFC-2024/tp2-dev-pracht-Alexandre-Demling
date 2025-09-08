@@ -1,0 +1,33 @@
+---
+import PlotFigure from "../../components/PlotFigure.astro";
+import Layout from "../../layouts/Layout.astro";
+import * as Plot from "@observablehq/plot";
+import penguins from "../../assets/penguins.json";
+
+const penguinsAdelie = penguins.filter(({species}) => species === "Adelie");
+---
+
+<Layout>
+  <h1 class="text-2xl">Penguins Adelie</h1>
+  <nav class="mb-4">
+    <ul class="flex gap-4">
+      <li><a href="/species/Adelie" class="text-blue-600 font-bold">Adelie</a></li>
+      <li><a href="/species/Gentoo" class="text-blue-600">Gentoo</a></li>
+      <li><a href="/species/Chinstrap" class="text-blue-600">Chinstrap</a></li>
+      <li><a href="/" class="text-gray-600">← Retour</a></li>
+    </ul>
+  </nav>
+  
+  <PlotFigure
+    options={{
+      marks: [
+        Plot.dot(penguinsAdelie, {
+          x: "culmen_length_mm",
+          y: "culmen_depth_mm",
+          stroke: "species",
+        }),
+      ],
+      title: "Penguins Adelie - Culmen Length vs Depth"
+    }}
+  />
+</Layout>

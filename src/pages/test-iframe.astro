@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <h1 class="text-2xl">Test avec Iframe</h1>
+  
+  <nav class="mb-4">
+    <ul class="flex gap-4">
+      <li><a href="/species/Adelie" target="species-frame" class="text-blue-600">Adelie</a></li>
+      <li><a href="/species/Gentoo" target="species-frame" class="text-blue-600">Gentoo</a></li>
+      <li><a href="/species/Chinstrap" target="species-frame" class="text-blue-600">Chinstrap</a></li>
+      <li><a href="/" class="text-gray-600">← Retour</a></li>
+    </ul>
+  </nav>
+  
+  <iframe 
+    name="species-frame" 
+    src="/species/Adelie" 
+    width="100%" 
+    height="600"
+    class="border border-gray-300"
+    onload="resizeIframe(this)"
+  ></iframe>
+  
+  
+</Layout>

@@ -7,6 +7,7 @@ import penguins from "../assets/penguins.json";
 
 <Layout>
   <h1 class="text-2xl">Test Astro et Plot (Observablehq)</h1>
+  
   <PlotFigure
     options={{
       marks: [
@@ -18,4 +19,37 @@ import penguins from "../assets/penguins.json";
       ],
     }}
   />
+  
+  <h3 class="text-xl mt-8 mb-4">Menu - Choisissez votre approche :</h3>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="border p-4 rounded">
+      <h4 class="font-bold mb-2">1. Pages séparées</h4>
+      <nav>
+        <ul class="space-y-2">
+          <li><a href="/species/Adelie" class="text-blue-600">Adelie</a></li>
+          <li><a href="/species/Gentoo" class="text-blue-600">Gentoo</a></li>
+          <li><a href="/species/Chinstrap" class="text-blue-600">Chinstrap</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="border p-4 rounded">
+      <h4 class="font-bold mb-2">2. Avec Iframe</h4>
+      <nav>
+        <ul class="space-y-2">
+          <li><a href="/test-iframe" class="text-blue-600">Page avec iframe</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="border p-4 rounded">
+      <h4 class="font-bold mb-2">3. Slider avec ancres</h4>
+      <nav>
+        <ul class="space-y-2">
+          <li><a href="/slider-page" class="text-blue-600">Page avec slider</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </Layout>
